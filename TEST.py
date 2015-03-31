@@ -412,7 +412,179 @@ print median([1,2,3,4,5,5,6,6,7,7,7,7,7,8,8,8,9,9])
 
 # ---------------------------------------------------------------------
 
+grades = [100, 100, 90, 40, 80, 100, 85, 70, 90, 65, 90, 85, 50.5]
 
+def print_grades(grades):
+    for grade in grades:
+        print grade
+
+def grades_sum(grades):
+    total = 0
+    for grade in grades: 
+        total += grade
+    return total
+    
+def grades_average(grades):
+    sum_of_grades = grades_sum(grades)
+    average = sum_of_grades / float(len(grades))
+    return average
+
+def grades_variance(scores):
+    average = grades_average(scores)
+    variance = 0
+    for score in scores:
+        variance += (average - score) ** 2
+    return variance / float(len(scores))
+print grades_variance(grades)
+
+def grades_std_deviation(variance):
+    return variance ** 0.5
+variance = grades_variance(grades)  
+print grades_std_deviation(variance)
+
+# ---------------------------------------------------------------------
+
+my_dict = {
+    "Name": "dvt",
+    "Age": 25,
+}
+print my_dict.items()
+
+# ---------------------------------------------------------------------
+
+my_dict = {
+    "Name": "dvt",
+    "Age": 25,
+}
+print my_dict.keys()
+print my_dict.values()
+
+# ---------------------------------------------------------------------
+
+evens_to_50 = [i for i in range(51) if i % 2 == 0]
+print evens_to_50
+
+# ---------------------------------------------------------------------
+
+cubes_by_four = [ x**3 for x in range(1,11) if (x**3) % 4 == 0]
+print cubes_by_four
+
+# ---------------------------------------------------------------------
+
+my_list = range(16)
+print filter(lambda x: x % 3 == 0, my_list)
+
+# ---------------------------------------------------------------------
+
+languages = ["HTML", "JavaScript", "Python", "Ruby"]
+print filter(lambda x: x[0] == 'P', languages)
+
+# ---------------------------------------------------------------------
+
+squares = [x**2 for x in range(1, 11)]
+print filter(lambda x: x >=30 and x <=70, squares)
+
+# ---------------------------------------------------------------------
+
+movies = {
+	"Monty Python and the Holy Grail": "Great",
+	"Monty Python's Life of Brian": "Good",
+	"Monty Python's Meaning of Life": "Okay"
+} 
+print movies.items()
+
+# ---------------------------------------------------------------------
+
+threes_and_fives = [x for x in range(1,16) if x % 3 == 0 or x % 5 == 0]
+print threes_and_fives
+
+# ---------------------------------------------------------------------
+
+garbled = "!XeXgXaXsXsXeXmX XtXeXrXcXeXsX XeXhXtX XmXaX XI"
+reverse = garbled[::-2]
+print reverse
+message = filter(lambda x: x != "X",reverse)
+print message
+
+# ---------------------------------------------------------------------
+
+garbled = "IXXX aXXmX aXXXnXoXXXXXtXhXeXXXXrX sXXXXeXcXXXrXeXt mXXeXsXXXsXaXXXXXXgXeX!XX"
+# print reverse
+message = filter(lambda x: x != "X",garbled)
+print message
+
+# ---------------------------------------------------------------------
+
+print 5 >> 4  # Right Shift
+print 5 << 1  # Left Shift
+print 8 & 5   # Bitwise AND
+print 9 | 4   # Bitwise OR
+print 12 ^ 42 # Bitwise XOR
+print ~88     # Bitwise NOT
+
+
+# ---------------------------------------------------------------------
+
+print 0b1,    #1
+print 0b10,   #2
+print 0b11,   #3
+print 0b100,  #4
+print 0b101,  #5
+print 0b110,  #6
+print 0b111   #7
+print "******"
+print 0b1 + 0b11
+print 0b11 * 0b11
+
+
+# ---------------------------------------------------------------------
+
+def check_bit4(input):
+    m= input & 0b1000
+
+    if m>0:
+        return "on"
+    else:
+       return "off"
+
+# ---------------------------------------------------------------------
+
+
+a = 0b10111011
+mask=0b110
+desired=a|mask
+print bin(desired)
+
+# ---------------------------------------------------------------------
+
+a = 0b11101110
+mask = 0b11111111
+flip = a^mask
+print bin(flip)
+
+# ---------------------------------------------------------------------
+
+class Fruit(object):
+    """A class that makes various tasty fruits."""
+    def __init__(self, name, color, flavor, poisonous):
+        self.name = name
+        self.color = color
+        self.flavor = flavor
+        self.poisonous = poisonous
+
+    def description(self):
+        print "I'm a %s %s and I taste %s." % (self.color, self.name, self.flavor)
+
+    def is_edible(self):
+        if not self.poisonous:
+            print "Yep! I'm edible."
+        else:
+            print "Don't eat me! I am super poisonous."
+
+apple = Fruit("apple", "red", "sour", False)
+
+apple.description()
+apple.is_edible()
 
 # ---------------------------------------------------------------------
 
@@ -431,3 +603,14 @@ print median([1,2,3,4,5,5,6,6,7,7,7,7,7,8,8,8,9,9])
 
 
 # ---------------------------------------------------------------------
+
+
+
+# ---------------------------------------------------------------------
+
+
+
+# ---------------------------------------------------------------------
+
+
+
