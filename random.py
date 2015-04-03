@@ -14,7 +14,7 @@ while count < 3:
 else:
     print "You win!"
 
-
+"""
 
 
 from random import randint
@@ -34,7 +34,7 @@ else:
 guesses_left -= 1
 
 
-
+"""
 
 print "Counting..."
 
