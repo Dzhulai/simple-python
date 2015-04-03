@@ -827,26 +827,82 @@ print my_car.condition
 
 # ---------------------------------------------------------------------
 
+class Point3D(object):
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y 
+        self.z = z
+    def __repr__(self):
+        return "(%d, %d, %d)" % (self.x, self.y, self.z)
+my_point = Point3D (x = 1, y = 2, z = 3)
+print my_point
+
+# ---------------------------------------------------------------------
+
+my_list = [i**2 for i in range(1,11)]
+
+my_file = open("output.txt", "r+")
+
+# Add your code below!
+
+for item in my_list:
+    my_file.write(str(item)+ "\n")
+
+my_file.close()
+
+# ---------------------------------------------------------------------
+
+my_file = open("output.txt", "r")
+print my_file.read()
+my_file.close()
+
+# ---------------------------------------------------------------------
+
+my_file = open("text.txt", "r")
+print my_file.readline()
+print my_file.readline()
+print my_file.readline()
+my_file.close()
+
+# ---------------------------------------------------------------------
+
+# Open the file for reading
+read_file = open("text.txt", "r")
+
+# Use a second file handler to open the file for writing
+write_file = open("text.txt", "w")
+# Write to the file
+write_file.write("Not closing files is VERY BAD.")
+
+write_file.close()
+
+# Try to read from the file
+print read_file.read()
+read_file.close()
+
+# ---------------------------------------------------------------------
+
+with open("text.txt", "w") as textfile:
+	textfile.write("Success!")
+textfile.close()
+
+# ---------------------------------------------------------------------
+
+with open("text.txt", "w") as lookfile:
+    if not lookfile.closed:
+        lookfile.close()
+    print lookfile.closed
+
+# ---------------------------------------------------------------------
 
 
 # ---------------------------------------------------------------------
 
 
-
 # ---------------------------------------------------------------------
 
 
-
 # ---------------------------------------------------------------------
-
-
-
-# ---------------------------------------------------------------------
-
-
-
-# ---------------------------------------------------------------------
-
 
 
 
